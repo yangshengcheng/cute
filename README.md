@@ -8,6 +8,7 @@
 >>commons-cli-1.2.jar
 >
 >>log4j-1.2.8.jar
+>
 >src
 >
 >>globalVal.java
@@ -27,6 +28,7 @@
 >>server.java
 >
 >>stock.java
+>
 >log4j.properties
 >
 >manifest.mf
@@ -35,4 +37,7 @@
 >istock.sh
 >
 >build.sh
+
+
+
 
