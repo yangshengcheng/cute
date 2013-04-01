@@ -127,10 +127,12 @@
 	#sh istock.sh -f /tmp/stockList.csv -p 1234
 
 ###2、istock_push中间的配置和运行
-	+ istock_push除了使用系统内核的模块，还使用了connect 、socket.io这两个第三方模块，请将这两个模块安装于istock_push目录下
-	+ istock_push的web服务运行脚本为server.js,他默认绑定本地地址 ,默认的监听地址为 8888，假如这台服务器的地址为172.16.11.110 
+	istock_push除了使用系统内核的模块，还使用了connect 、socket.io这两个第三方模块，请将这两个模块安装于istock_push目录下
+
+	istock_push的web服务运行脚本为server.js,他默认绑定本地地址 ,默认的监听地址为 8888，假如这台服务器的地址为172.16.11.110 
 	请在浏览器中输入 http://172.16.11.110:8888, 则连接到了中间件服务器
-	+ istock_push中间件默认使用本地地址和端口9001和istock股票模拟器进行注册、消息传递，若需要做相应的变更，请在server.js中修改middlewareHost和middlewarePort这两个对应的变量
+
+	istock_push中间件默认使用本地地址和端口9001和istock股票模拟器进行注册、消息传递，若需要做相应的变更，请在server.js中修改middlewareHost和middlewarePort这两个对应的变量
 	
 
 
