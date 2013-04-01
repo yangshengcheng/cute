@@ -34,6 +34,7 @@
 >manifest.mf
 >
 >stockList.csv
+>
 >istock.sh
 >
 >build.sh
@@ -61,7 +62,7 @@
 三、安装步骤(在root用户下执行)
 ===================================
 ###1、编译环境安装
-  	一般系统安装时已经将make和gcc安装，若是没有安装，请从安装光碟中找到相应的rpm文件进行安装
+		一般系统安装时已经将make和gcc安装，若是没有安装，请从安装光碟中找到相应的rpm文件进行安装
 ###2、jdk安装
 	# chmod 755 jdk-6u24-linux-i586.bin 
 	#./jdk-6u24-linux-i586.bin
@@ -112,7 +113,24 @@
 	#npm install connect
 
 四、配置和执行指引
+===================================
 ###1、istock 配置和执行
+	切换到istock目录下执行,不带任何参数执行
+	#sh istock.sh 
+	将默认使用当前目录的stockList.csv做为股票列表
+	默认使用9008作为监听端口
+
+
+	想要指定股票列表文件和监听端口请使用以下的参数格式运行istock
+	sh istock.sh -f [股票列表文件的绝对路径] -p [监听端口]
+	如:
+	#sh istock.sh -f /tmp/stockList.csv -p 1234
+
+###2、istock_push中间的配置和运行
+	+ istock_push除了使用系统内核的模块，还使用了connect 、socket.io这两个第三方模块，请将这两个模块安装于istock_push目录下
+	+ istock_push的web服务运行脚本为server.js,他默认绑定本地地址 ,默认的监听地址为 8888，假如这台服务器的地址为172.16.11.110 
+	请在浏览器中输入 http://172.16.11.110:8888, 则连接到了中间件服务器
+	+ istock_push中间件默认使用本地地址和端口9001和istock股票模拟器进行注册、消息传递，若需要做相应的变更，请在server.js中修改middlewareHost和middlewarePort这两个对应的变量
 	
 
 
